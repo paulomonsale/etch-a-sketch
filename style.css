@@ -10,6 +10,7 @@ html {
 .grid {
   display: grid;
   background-color: gray;
+  border: 1px solid black;
   width: 1000px;
   height: 1000px;
 }
@@ -20,5 +21,10 @@ html {
 
 .square {
   background-color: lightgray;
+  border: 1px solid gray;
+}
+
+.colored-in {
+  background-color: gray;
   border: 1px solid gray;
 }

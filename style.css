@@ -8,6 +8,17 @@ html {
 }
 
 .grid {
+  display: grid;
+  background-color: gray;
+  width: 1000px;
+  height: 1000px;
+}
 
-  background-color: white;
+/* .grid > div:nth-child(odd) {
+  background-color: lightgray;
+} */
+
+.square {
+  background-color: lightgray;
+  border: 1px solid gray;
 }

@@ -15,10 +15,6 @@ html {
   height: 1000px;
 }
 
-/* .grid > div:nth-child(odd) {
-  background-color: lightgray;
-} */
-
 .square {
   background-color: lightgray;
   border: 1px solid gray;

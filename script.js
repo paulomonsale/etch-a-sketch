@@ -1,6 +1,6 @@
 const grid = document.querySelector(".grid");
 
-createGrid(16);
+createGrid(50);
 
 function createGrid(squaresPerSide) {
   let areaInSquares = squaresPerSide ** 2;
@@ -13,11 +13,21 @@ function createGrid(squaresPerSide) {
     grid.style.gridTemplateRows = "repeat(" + squaresPerSide + ", 1fr)";
     grid.style.gridTemplateColumns = "repeat(" + squaresPerSide + ", 1fr)";
 
-    const allSquares = document.querySelectorAll(".square");
+    //grid.addEventListener("click", classToggle);
 
-    allSquares.forEach(unit => unit.addEventListener("hover", (e) => {
-      e.target.classList.toggle("square");
-      e.target.classList.toggle("colored-in");
-    }));
+    grid.addEventListener("mousedown", () => {
+      grid.addEventListener("mouseover", classToggle);
+    });
+
+    grid.addEventListener("mouseup", () => {
+      grid.removeEventListener("mouseover", classToggle);
+    });
+  }
+}
+
+let classToggle = function (e) {
+  if (e.target.className === "square") {
+    e.target.classList.toggle("square");
+    e.target.classList.toggle("colored-in");
   }
 }

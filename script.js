@@ -14,8 +14,6 @@ function createGrid(squaresPerSide) {
     grid.style.gridTemplateRows = "repeat(" + squaresPerSide + ", 1fr)";
     grid.style.gridTemplateColumns = "repeat(" + squaresPerSide + ", 1fr)";
 
-    //grid.addEventListener("click", classToggle);
-
     grid.addEventListener("mousedown", () => {
       grid.addEventListener("mouseover", classToggle);
     });

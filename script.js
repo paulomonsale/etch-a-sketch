@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid");
+const button = document.getElementById("new-grid");
 
-createGrid(50);
+createGrid(16);
 
 function createGrid(squaresPerSide) {
   let areaInSquares = squaresPerSide ** 2;
@@ -25,9 +26,22 @@ function createGrid(squaresPerSide) {
   }
 }
 
+function clearGrid() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
+
 let classToggle = function (e) {
   if (e.target.className === "square") {
     e.target.classList.toggle("square");
     e.target.classList.toggle("colored-in");
   }
 }
+
+button.addEventListener("click", (e) => {
+  let squaresPerSide = prompt("How many squares per side: ");
+
+  clearGrid();
+  createGrid(squaresPerSide);
+});

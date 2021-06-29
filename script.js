@@ -39,8 +39,13 @@ let classToggle = function (e) {
   }
 }
 
-button.addEventListener("click", (e) => {
-  let squaresPerSide = prompt("How many squares per side: ");
+button.addEventListener("click", () => {
+  let squaresPerSide = prompt("How many squares per side?");
+
+  while (squaresPerSide > 100 || squaresPerSide < 1) {
+    alert("Squares per side must be between 1 and 100");
+    squaresPerSide = prompt("How many squares per side?");
+  }
 
   clearGrid();
   createGrid(squaresPerSide);
